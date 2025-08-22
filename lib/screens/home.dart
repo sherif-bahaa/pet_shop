@@ -399,9 +399,9 @@ class _HomePageStateState extends State<HomePageState> {
                     height: 260,
                     child: Consumer<PetProvider>(
                       builder: (context, petProvider, child) {
-                        // if (petProvider.isLoading) {
-                        //   return const LoadingShimmer();
-                        // }
+                        if (petProvider.isLoading) {
+                          return const CircularProgressIndicator();
+                        }
 
                         final pets = petProvider.filteredPets;
                         int price = 20;
@@ -459,7 +459,7 @@ class _HomePageStateState extends State<HomePageState> {
                                                     (context, url, error) {
                                                       return SizedBox(
                                                         child: Image.asset(
-                                                          "assets/download.png",
+                                                          "assets/hom_image.png",
                                                         ),
                                                       );
                                                     },

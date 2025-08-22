@@ -74,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
                           image: const DecorationImage(
-                            image: AssetImage('assets/profile_photo.png'),
+                            image: AssetImage('assets/hom_image.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -84,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: CircleAvatar(
                           radius: 50,
                           backgroundImage: const AssetImage(
-                            'assets/hom_image.png',
+                            'assets/profava.jpg',
                           ),
                           backgroundColor: Colors.white,
                         ),

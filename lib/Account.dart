@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_shop/widgets/helper.dart';
 
-
-
-
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -35,11 +32,7 @@ class _Account extends State<Account> {
         centerTitle: true,
       ),
       body: ListView(
-        padding: const EdgeInsets.only(
-          top: 10,
-          right: 30,
-          left: 30,
-        ),
+        padding: const EdgeInsets.only(top: 10, right: 30, left: 30),
         children: [
           Stack(
             clipBehavior: Clip.none,
@@ -53,7 +46,7 @@ class _Account extends State<Account> {
                     bottomRight: Radius.circular(20),
                   ),
                   child: Image.asset(
-                    'assets/images/background2.png',
+                    'assets/hom_image.png',
                     width: 327,
                     height: 159,
                     fit: BoxFit.cover,
@@ -66,7 +59,7 @@ class _Account extends State<Account> {
                 right: 0,
                 child: ClipOval(
                   child: Image.asset(
-                    'assets/images/profile_photo.png',
+                    'assets/profava.jpg',
                     width: 100,
                     height: 100,
                     fit: BoxFit.scaleDown,
@@ -76,7 +69,7 @@ class _Account extends State<Account> {
             ],
           ),
 
-          const SizedBox(height: 50), 
+          const SizedBox(height: 50),
 
           const Center(
             child: Text(
@@ -97,13 +90,10 @@ class _Account extends State<Account> {
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 8), 
+          const SizedBox(height: 8),
 
           TextField(
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
             decoration: InputDecoration(
               hintText: "",
               hintStyle: const TextStyle(
@@ -134,13 +124,10 @@ class _Account extends State<Account> {
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 8), 
+          const SizedBox(height: 8),
 
           TextField(
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
             decoration: InputDecoration(
               hintText: "",
               hintStyle: const TextStyle(
@@ -171,13 +158,10 @@ class _Account extends State<Account> {
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 8), 
+          const SizedBox(height: 8),
 
           TextField(
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
             decoration: InputDecoration(
               hintText: "",
               hintStyle: const TextStyle(
@@ -202,7 +186,7 @@ class _Account extends State<Account> {
           Container(
             child: OutlinedButton(
               onPressed: () {},
-              
+
               style: OutlinedButton.styleFrom(
                 backgroundColor: Color(0xff7140FD),
                 shape: const StadiumBorder(),

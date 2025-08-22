@@ -59,7 +59,7 @@ class _SellerModePageState extends State<SellerModePage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
                           image: const DecorationImage(
-                            image: AssetImage('assets/background2.png'),
+                            image: AssetImage('assets/hom_image.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -83,7 +83,7 @@ class _SellerModePageState extends State<SellerModePage> {
                           ),
                           child: ClipOval(
                             child: Image.asset(
-                              'assets/profile_photo.png',
+                              'assets/profava.jpg',
                               fit: BoxFit.scaleDown,
                             ),
                           ),
