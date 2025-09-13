@@ -9,14 +9,12 @@ class PetProvider extends ChangeNotifier {
   String? _error;
   String _selectedStatus = 'available';
 
-  // Getters
   List<Pet> get pets => _pets;
   List<Pet> get filteredPets => _filteredPets;
   bool get isLoading => _isLoading;
   String? get error => _error;
   String get selectedStatus => _selectedStatus;
 
-  // Load available pets
   Future<void> loadAvailablePets() async {
     _setLoading(true);
     _clearError();
@@ -32,24 +30,7 @@ class PetProvider extends ChangeNotifier {
     }
   }
 
-  // Load pets by status
-  Future<void> loadPetsByStatus(String status) async {
-    _setLoading(true);
-    _clearError();
-    _selectedStatus = status;
-    
-    try {
-      _pets = await PetService.getPetsByStatus(status);
-      _filteredPets = _pets;
-      notifyListeners();
-    } catch (e) {
-      _setError(e.toString());
-    } finally {
-      _setLoading(false);
-    }
-  }
-
-  // Filter pets by category
+  
   void filterPetsByCategory(String category) {
     if (category.isEmpty) {
       _filteredPets = _pets;
@@ -61,7 +42,6 @@ class PetProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Filter pets by name
   void filterPetsByName(String name) {
     if (name.isEmpty) {
       _filteredPets = _pets;
@@ -73,20 +53,17 @@ class PetProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Reset filter
   void resetFilter() {
     _filteredPets = _pets;
     notifyListeners();
   }
 
-  // Get unique categories
   List<String> get uniqueCategories {
     final categories = _pets.map((pet) => pet.category.name).toSet().toList();
     categories.sort();
     return categories;
   }
 
-  // Private methods
   void _setLoading(bool loading) {
     _isLoading = loading;
     notifyListeners();

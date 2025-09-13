@@ -6,10 +6,8 @@ import 'package:pet_shop/SellerModePage.dart';
 import 'package:pet_shop/providers/pet_provider.dart';
 import 'package:pet_shop/screens/cart_page.dart';
 import 'package:pet_shop/screens/pet_detail_screen.dart';
-import 'package:pet_shop/screens/pet_list_screen.dart';
 import 'package:pet_shop/screens/search.dart';
 import 'package:pet_shop/security_page.dart';
-import 'package:pet_shop/widgets/loading_shimmer.dart';
 import 'package:provider/provider.dart';
 
 @override
@@ -153,9 +151,7 @@ class _HomePageStateState extends State<HomePageState> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => NotificationPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => Search_page()),
                     );
                   },
                   child: const Icon(
@@ -245,7 +241,7 @@ class _HomePageStateState extends State<HomePageState> {
                       Transform.translate(
                         offset: const Offset(-30, 0),
                         child: Image.asset(
-                          "assets/Image.png",
+                          "assets/imageitem.png",
                           width: 100,
                           height: 100,
                           fit: BoxFit.contain,
@@ -400,7 +396,14 @@ class _HomePageStateState extends State<HomePageState> {
                     child: Consumer<PetProvider>(
                       builder: (context, petProvider, child) {
                         if (petProvider.isLoading) {
-                          return const CircularProgressIndicator();
+                          return SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: const CircularProgressIndicator(),
+                            ),
+                          );
                         }
 
                         final pets = petProvider.filteredPets;
@@ -453,17 +456,26 @@ class _HomePageStateState extends State<HomePageState> {
                                                   const BorderRadius.vertical(
                                                     top: Radius.circular(16),
                                                   ),
-                                              child: CachedNetworkImage(
-                                                imageUrl: pet.photoUrls.first,
-                                                errorWidget:
-                                                    (context, url, error) {
-                                                      return SizedBox(
-                                                        child: Image.asset(
-                                                          "assets/hom_image.png",
-                                                        ),
-                                                      );
-                                                    },
-                                              ),
+                                              child: pet.photoUrls.isNotEmpty
+                                                  ? CachedNetworkImage(
+                                                      imageUrl:
+                                                          pet.photoUrls.first,
+                                                      errorWidget:
+                                                          (
+                                                            context,
+                                                            url,
+                                                            error,
+                                                          ) {
+                                                            return SizedBox(
+                                                              child: Image.asset(
+                                                                "assets/imageitem.png",
+                                                              ),
+                                                            );
+                                                          },
+                                                    )
+                                                  : Image.asset(
+                                                      "assets/imageitem.png",
+                                                    ),
                                             ),
                                           ),
                                           const SizedBox(height: 8),

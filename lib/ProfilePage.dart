@@ -167,12 +167,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     childAspectRatio: 0.75,
                     children: const [
                       _ProductCard(
-                        image: 'assets/Image.png',
+                        image: 'assets/imageitem.png',
                         name: 'RC Kitten',
                         price: '20.99',
                       ),
                       _ProductCard(
-                        image: 'assets/Image.png',
+                        image: 'assets/imageitem.png',
                         name: 'RC Persian',
                         price: '22.99',
                       ),

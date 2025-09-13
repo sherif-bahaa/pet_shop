@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                     final data = docs[index].data() as Map<String, dynamic>;
                     return ListTile(
                       contentPadding: EdgeInsets.all(10),
-                      leading: Image.asset("assets/hom_image.png"),
+                      leading: Image.asset("assets/imageitem.png"),
                       title: Text(data['name'] ?? 'No name'),
                       trailing: IconButton(
                         onPressed: () {

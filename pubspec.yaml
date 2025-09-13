@@ -84,6 +84,8 @@ flutter:
     - assets/profile_photo.png
     - assets/profile_seller_mode.png
     - assets/profava.jpg
+    - assets/avatar.jpg
+    - assets/imageitem.png
 
   
     
